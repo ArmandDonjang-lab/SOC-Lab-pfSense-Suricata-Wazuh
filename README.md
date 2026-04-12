@@ -22,16 +22,12 @@ Kali Linux ───🛡️─── pfSense(Suricata IDS) ─── syslog-ng �
 │
 Ubuntu Server (victime)
 
-text
-
 ## 🚀 Quick Deploy (15min)
 
 ### 1. pfSense → Suricata IDS
 Packages → Suricata → [LAN Interface]
 ☑️ IDS mode only (PAS IPS)
 ☑️ EVE.json output → syslog-ng
-
-text
 
 ### 2. Wazuh Active Response
 ```xml
