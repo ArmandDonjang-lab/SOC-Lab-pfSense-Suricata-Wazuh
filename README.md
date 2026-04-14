@@ -36,6 +36,7 @@ Status > Dashboard > Interfaces :
 ![pfSense Interfaces](screenshots/pfsense-interfaces.png)
 
 Services > DHCP Server :
+
 LAN1 : 192.168.1.3 - 254
 LAN2 : 192.168.2.2 - 254
 ![DHCP Config](screenshots/dhcp-config1.png)
