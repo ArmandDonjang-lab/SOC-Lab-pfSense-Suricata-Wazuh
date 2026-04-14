@@ -43,8 +43,6 @@ Status > Dashboard > Interfaces :
 Services > DHCP Server :
 
 1. LAN1 : 192.168.1.3 – 192.168.1.254
-
-
 ![DHCP Config](screenshots/dhcp-config1.png)
 
 2. LAN2 : 192.168.2.2 – 192.168.2.254
@@ -72,9 +70,11 @@ d) IPS Mode : Legacy Blocking     // Legacy pour utilizer le mode IDS de Suricat
 Configuration syslog-ng pfSense :
 
 a) Dans "General"
+
 ![syslog-ng Config](screenshots/syslog-ng1.png)
 
 b) Dans "Advanced"
+
 ![syslog-ng Config](screenshots/syslog-ng2.png)
 
 • Nouvelle config destination = DST_WAZUH_SYSLOG     // Destinataire des logs
