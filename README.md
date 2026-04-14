@@ -10,6 +10,7 @@
 
 ## 2. ÉLEMENTS CONSTITUTIFS DU PROJET
 Ce projet sera constitué de :
+
 a)	**PfSense 2.8.1** : Utiliser pour ses services de filtrage du réseau, du routage entre nos LAN et pour l’utiliser comme serveur DHCP
 b)	**Suricata 7.0.8_5** : Pour la détection de nos différentes attaques 
 c)	**Syslog-ng 1.16.2** : Transfert les logs de Suricata et Pfsense vers Wazuh 
