@@ -30,7 +30,7 @@ Ce projet sera constitué de :
 3. Ubuntu Server (LAN1)
 4. Kali Linux (LAN2)
 
-### 3.2 pfSense - Configuration Interfaces
+### 3.2 Configuration des interfaces sur pfSense
 
 Status > Dashboard > Interfaces :
 
@@ -42,12 +42,12 @@ Status > Dashboard > Interfaces :
 
 Services > DHCP Server :
 
-1. LAN1 : 192.168.1.3 – 254
+1. LAN1 : 192.168.1.3 – 192.168.1.254
 
 
 ![DHCP Config](screenshots/dhcp-config1.png)
 
-2. LAN2 : 192.168.2.2 – 254
+2. LAN2 : 192.168.2.2 – 192.168.2.254
 ![DHCP Config](screenshots/dhcp-config2.png)
 
 ### 3.3 Configuration de Suricata IDS
@@ -71,10 +71,10 @@ d) IPS Mode : Legacy Blocking     // Legacy pour utilizer le mode IDS de Suricat
 
 Configuration syslog-ng pfSense :
 
-a) Dans « General »
+a) Dans "General"
 ![syslog-ng Config](screenshots/syslog-ng1.png)
 
-b) Dans “Advanced
+b) Dans "Advanced"
 ![syslog-ng Config](screenshots/syslog-ng2.png)
 
 • Nouvelle config destination = DST_WAZUH_SYSLOG     // Destinataire des logs
