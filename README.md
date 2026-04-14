@@ -8,7 +8,7 @@
 ### Topologie Réseau
 ![SOC Lab](image/topologie.png)
 
-## 2. ÉLEMENTS CONSTITUTIFS DU PROJET
+### 2. ÉLEMENTS CONSTITUTIFS DU PROJET
 Ce projet sera constitué de :
 
 a)	**PfSense 2.8.1** : Utiliser pour ses services de filtrage du réseau, du routage entre nos LAN et pour l’utiliser comme serveur DHCP
