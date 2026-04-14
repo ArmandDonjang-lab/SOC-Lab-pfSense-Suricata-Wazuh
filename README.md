@@ -10,8 +10,8 @@
 
 ## 2. ÉLEMENTS CONSTITUTIFS DU PROJET
 Ce projet sera constitué de :
-**PfSense 2.8.1** : Utiliser pour ses services de filtrage du réseau, du routage entre nos LAN et pour l’utiliser comme serveur DHCP
-**Suricata 7.0.8_5** : Pour la détection de nos différentes attaques 
+	**PfSense 2.8.1** : Utiliser pour ses services de filtrage du réseau, du routage entre nos LAN et pour l’utiliser comme serveur DHCP
+	**Suricata 7.0.8_5** : Pour la détection de nos différentes attaques 
 	**Syslog-ng 1.16.2** : Transfert les logs de Suricata et Pfsense vers Wazuh 
 	**Wazuh 4.11.1** : Utiliser pour surveiller les évènements dans le réseau et pour avoir une réponse active en cas de menace 
 	**Wazuh Agent 4.11.1** : Pour permettre à Wazuh de mieux intéragir avec Ubuntu
@@ -36,11 +36,11 @@ Status > Dashboard > Interfaces :
 ![pfSense Interfaces](screenshots/pfsense-interfaces.png)
 
 Services > DHCP Server :
-
 LAN1 : 192.168.1.3 - 254
 LAN2 : 192.168.2.2 - 254
 ![DHCP Config](screenshots/dhcp-config1.png)
 ![DHCP Config](screenshots/dhcp-config2.png)
+
 
 ### 3.3 Configuration de Suricata IDS 
 
@@ -52,6 +52,8 @@ Services > Suricata > LAN1 :
 ![Suricata LAN2](screenshots/suricata-lan1-2.png)
 •	IPS Mode : Legacy Blocking // Legacy pour utilizer le mode IDS de Suricata
 ![Suricata LAN2](screenshots/suricata-lan1-2.png)
+
+
 
 ### 3.4 Configuration de Syslog-ng 
 Configuration syslog-ng pfSense :
@@ -107,6 +109,12 @@ sudo nano /var/ossec/etc/ossec.conf   // Pour modifier le fichier de configurati
 ping -c 4 192.168.1.5 
 
 ![Test Connectivité](screenshots/ping-connectivity1.png)
+
+
+
+
+
+
 
 #### 4.2.2 Mise en place de l'attaque
 
@@ -181,5 +189,4 @@ Skills Démontrés
 **Active Response** : ossec.conf → **firewall-drop** 
 **Red Team** : Scan Nmap + SSH Brute Force avec Hydra
 **Analyse Sécurité** : Chaîne complète Attaque→Détection→Réponse 
-
 
