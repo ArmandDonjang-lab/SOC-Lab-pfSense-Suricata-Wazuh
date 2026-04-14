@@ -43,26 +43,27 @@ Status > Dashboard > Interfaces :
 Services > DHCP Server :
 
 1. LAN1 : 192.168.1.3 – 254
-2. LAN2 : 192.168.2.2 – 254
+
 
 ![DHCP Config](screenshots/dhcp-config1.png)
 
+2. LAN2 : 192.168.2.2 – 254
 ![DHCP Config](screenshots/dhcp-config2.png)
 
 ### 3.3 Configuration de Suricata IDS
 
 Services > Suricata > LAN1 :
 
-a) Enable : Cocher // Pour activer la surveillance de Suricata sur cette interface
+a) Enable : Cocher                // Pour activer la surveillance de Suricata sur cette interface
 
 ![Suricata LAN2](screenshots/suricata-lan1-1.png)
 
-b) EVE JSON Log : Cocher // Important pour le transfert des Logs de Suricata
+b) EVE JSON Log : Cocher          // Important pour le transfert des Logs de Suricata
 c) EVE Output Type : FILE
 
 ![Suricata LAN2](screenshots/suricata-lan1-2.png)
 
-d) IPS Mode : Legacy Blocking // Legacy pour utilizer le mode IDS de Suricata
+d) IPS Mode : Legacy Blocking     // Legacy pour utilizer le mode IDS de Suricata
 
 ![Suricata LAN2](screenshots/suricata-lan1-2.png)
 
@@ -76,13 +77,13 @@ a) Dans « General »
 b) Dans “Advanced
 ![syslog-ng Config](screenshots/syslog-ng2.png)
 
-• Nouvelle config destination = DST_WAZUH_SYSLOG  // Destinataire des logs
+• Nouvelle config destination = DST_WAZUH_SYSLOG     // Destinataire des logs
 
 ```xml
 { network("192.168.1.2" transport("tcp") port(514)); };
 ```
 
-• Nouvelle config source = S_SURICATA_EVE // Source des logs
+• Nouvelle config source = S_SURICATA_EVE            // Source des logs
 
 ```xml
 { wildcard-file(
@@ -94,7 +95,7 @@ b) Dans “Advanced
        ); };
 ```
 
-• Nouvelle config Log = LOG_WAZUH_FORWARD  // Chemin des Logs
+• Nouvelle config Log = LOG_WAZUH_FORWARD           // Chemin des Logs
 
 ```xml
 { source(_DEFAULT); source(S_SURICATA_EVE); destination(DST_WAZUH_SYSLOG); };
@@ -103,7 +104,7 @@ b) Dans “Advanced
 ### 3.5 Wazuh - Active Response
 
 Activation de l’Active Response sur Wazuh
-sudo nano /var/ossec/etc/ossec.conf   // Pour modifier le fichier de configuration de Wazuh avec nano.
+sudo nano /var/ossec/etc/ossec.conf              // Pour modifier le fichier de configuration de Wazuh avec nano.
 
 ```xml
 <active-response>
@@ -121,14 +122,14 @@ sudo nano /var/ossec/etc/ossec.conf   // Pour modifier le fichier de configurati
 
 ### **ATTAQUE #1 : Scanning avec Nmap**
 
-### 4.2.1 Test de Connectivité Inter-LAN
+#### 4.1.1 Test de Connectivité Inter-LAN
 
 Test effectué sur la machine Kali Linux
 ping -c 4 192.168.1.5
 
 ![Test Connectivité](screenshots/ping-connectivity1.png)
 
-#### 4.2.2 Mise en place de l'attaque
+#### 4.1.2 Mise en place de l'attaque
 
 Commande pour effectuer nortre Scanning vers Ubuntu
 
@@ -138,19 +139,19 @@ nmap -sV -A -T4 192.168.1.5
 
 ![nmap -sV -A](screenshots/nmap-scan.png)
 
-#### 4.2.3 Détection par Suricata
+#### 4.1.3 Détection par Suricata
 
 Aller sur Status > Suricata > LAN2 > Alerts
 
 ![Suricata nmap Alert](screenshots/suricata-nmap.png)
 
-#### 4.2.4 Analyse des alerts de Wazuh
+#### 4.1.4 Analyse des alerts de Wazuh
 
 Ce rendre dans Threat Hunting > Events
 
 ![Wazuh nmap Detection](screenshots/wazuh-nmap.png)
 
-#### 4.2.5 Vérification Blocage
+#### 4.1.5 Vérification Blocage
 
 Test effectué sur la machine Kali Linux
 ping -c 4 192.168.1.5
@@ -159,14 +160,14 @@ ping -c 4 192.168.1.5
 
 ### **ATTAQUE #2 : SSH Brute-Force avec Hydra**
 
-### 4.3.1 Test de Connectivité Inter-LAN
+### 4.2.1 Test de Connectivité Inter-LAN
 
 Test effectué sur la machine Kali Linux
 ping -c 4 192.168.1.5
 
 ![Test Connectivité](screenshots/ping-connectivity2.png)
 
-#### 4.3.2 Mise en place de l'attaque
+#### 4.2.2 Mise en place de l'attaque
 
 Commande pour effectuer notre Brute force
 
@@ -176,19 +177,19 @@ Hydra -L username_list.txt -P password_list.txt 192.168.1.5 ssh
 
 ![Hydra Brute-Force](screenshots/hydra-ssh.png)
 
-#### 4.3.3 Détection par Suricata
+#### 4.2.3 Détection par Suricata
 
 Vérification des Alerte sur Suricata
 
 ![Suricata Hydra](screenshots/suricata-hydra.png)
 
-#### 4.3.4 Wazuh - Détection & Décision
+#### 4.2.4 Wazuh - Détection & Décision
 
 Vérification des Alertes de Wazuh
 
 ![Wazuh Hydra Alert](screenshots/wazuh-hydra.png)
 
-#### 4.3.5 Vérification Finale
+#### 4.2.5 Vérification Finale
 
 Test de connectivité sur la machine Kali linux
 ping -c 4 192.168.1.5
