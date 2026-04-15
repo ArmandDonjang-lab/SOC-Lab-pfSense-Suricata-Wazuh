@@ -6,7 +6,7 @@
 
 ### Topologie Réseau
 
-![SOC Lab](topologie.png)
+![SOC Lab](topologie.jpg)
 
 ### 2. ÉLEMENTS CONSTITUTIFS DU PROJET
 
