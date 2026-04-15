@@ -1,5 +1,5 @@
 # **SOC Lab** : Détection & blocage automatique des attaques réseau (Scanning réseau, SSH Brute-force)
-
+<!---test--->
 ## 1. PRESENTATION DU PROJET & TOPOLOGIE
 
 **Objectif** : Déployer une architecture SOC complète simulant des attaques réelles (**Scanning réseau** + **SSH Brute-force**) avec détection via **Suricata** et une réponse automatisée avec **Wazuh**.
