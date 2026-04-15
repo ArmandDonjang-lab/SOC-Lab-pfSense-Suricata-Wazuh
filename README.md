@@ -1,8 +1,8 @@
-# **SOC Lab** : Détection & blocage automatique des attaques réseau (scan Nmap, brute-force SSH)
+# **SOC Lab** : Détection & blocage automatique des attaques réseau (Scanning réseau, SSH Brute-force)
 
 ## 1. PRESENTATION DU PROJET & TOPOLOGIE
 
-**Objectif** : Déployer une architecture SOC complète simulant des attaques réelles (**nmap scanning** + **Hydra brute-force**) avec détection **Suricata** et réponse automatisée **Wazuh firewall-drop**.
+**Objectif** : Déployer une architecture SOC complète simulant des attaques réelles (**Scanning réseau** + **SSH Brute-force**) avec détection via **Suricata** et une réponse automatisée avec **Wazuh**.
 
 ### Topologie Réseau
 
@@ -104,7 +104,7 @@ b) Dans "Advanced"
 ### 3.5 Wazuh - Active Response
 
 Activation de l’Active Response sur Wazuh
-sudo nano /var/ossec/etc/ossec.conf              // Pour modifier le fichier de configuration de Wazuh avec nano.
+sudo nano /var/ossec/etc/ossec.conf              Pour modifier le fichier de configuration de Wazuh avec nano.
 
 ```xml
 <active-response>
