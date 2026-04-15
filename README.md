@@ -183,7 +183,7 @@ Vérification des Alerte sur Suricata
 
 ![Suricata Hydra](screenshots/suricata-hydra.png)
 
-#### 4.2.4 Wazuh - Détection & Décision
+#### 4.2.4 Wazuh - Détection & Réponse
 
 Vérification des Alertes de Wazuh
 
